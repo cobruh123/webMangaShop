@@ -7,6 +7,7 @@
         $user_id=$_GET['id'];
         $confirm_query="update users_items set status='Confirmed' where user_id=$user_id";
         $confirm_query_result=mysqli_query($con,$confirm_query) or die(mysqli_error($con));
+        header('location:profile.php');
         
     }
 ?>

@@ -13,7 +13,7 @@ function setComments($con) {
 }
 
 function getComments($con){
-	$sql = "SELECT * FROM comments";
+	$sql = "SELECT * FROM comments ORDER BY date DESC ";
 	$result = $con->query($sql);
 	while ($row = $result->fetch_assoc()) {
 		echo "<div class='comment-box'>";
@@ -21,9 +21,12 @@ function getComments($con){
 			echo $row['date']."<br>";
 			echo nl2br($row['message']);
 		echo "</div>";
+		if($row['admin_message']) {
+			echo "<div class='comment-box'>";
+			echo "<h4 class='text-primary'>Answer by Admin to ". $row['uid'] ."</h4><br>";
+			echo $row['admin_message']."<br>";
+			echo "</div>";
+		}
 
 	}
-
-	
-	
 }

@@ -1,6 +1,3 @@
 <?php
-		$link = mysqli_connect("localhost", "root", "");
-		mysqli_select_db($link, "manga_shop");
-		mysqli_query($link, "SET CHARACTER SET utf8");
-		?>
-		
+$link = mysqli_connect("localhost", "root", "root");
+mysqli_select_db($link, "manga_shop");
