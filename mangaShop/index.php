@@ -82,16 +82,20 @@
                </div>
            </div>
 
+           <hr>
+           <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; mt-3">
+           <h1>You can leave comments here: </h1>
            <?php
-            echo "<form class='form-comment' method='POST' action='".setComments($con)."'>
+            echo "<form class='form-comment' style='display: flex; flex-direction: column; margin-bottom: 25px;' method='POST' action='".setComments($con)."'>
                 <input type='hidden' name='uid' value='Anonymous'>
                 <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-                <textarea class='comment-area' name='message' ></textarea><br> 
+                <textarea class='comment-area' placeholder='Hi buddy' name='message' ></textarea>
                 <button class='btn btn-primary' type='submit' name='commentSubmit'>Comment</button>
             </form>";
 
             getComments($con);
             ?>
+            </div>
             <br><br> <br><br><br><br>
 
            <footer class="footer"> 
